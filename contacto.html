@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pig Noise | Soluciones Digitales</title>
+  <title>Contacto | Pig Noise</title>
 
   <style>
-    /* ---------------- RESET ---------------- */
+    /* -------- RESET -------- */
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #ffffff;
+      background: #f5f5f5;
       color: #111;
       line-height: 1.6;
     }
@@ -25,22 +25,7 @@
       color: inherit;
     }
 
-    /* ---------------- SMOOTH SCROLL ---------------- */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .section:target,
-    .cta:target {
-      animation: focusSection 1.2s ease;
-    }
-
-    @keyframes focusSection {
-      0% { box-shadow: inset 0 0 0 4px #000; }
-      100% { box-shadow: inset 0 0 0 0 transparent; }
-    }
-
-    /* ---------------- NAVBAR ---------------- */
+    /* -------- NAVBAR -------- */
     nav {
       width: 100%;
       padding: 24px 8%;
@@ -64,175 +49,136 @@
       letter-spacing: 0.5px;
     }
 
-    /* ---------------- HERO ---------------- */
-    .hero {
-      min-height: 90vh;
+    /* -------- CONTACT SECTION -------- */
+    .contact-section {
+      min-height: calc(100vh - 140px);
       display: flex;
       align-items: center;
-      padding: 0 8%;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 900;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      border-bottom: 6px solid #000;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      max-width: 620px;
-      color: #333;
-    }
-
-    .hero-buttons a {
-      padding: 16px 32px;
-      border: 2px solid #000;
-      margin-right: 16px;
-      font-weight: 700;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .hero-buttons a.primary {
-      background: #000;
-      color: #fff;
-    }
-
-    .hero-buttons a:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ---------------- SECTIONS ---------------- */
-    .section {
+      justify-content: center;
       padding: 120px 8%;
     }
 
-    .section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 80px;
-      font-weight: 900;
-    }
-
-    /* ---------------- SERVICES ---------------- */
-    .services {
+    .contact-card {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-    }
-
-    .service-card {
+      grid-template-columns: 1fr 1.25fr;
+      width: 960px;
+      max-width: 100%;
+      background: #fff;
       border-radius: 16px;
-      padding: 40px 32px;
-      background: #f6f6f6;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover {
-      background: #000;
-      color: #fff;
-      transform: translateY(-6px);
-    }
-
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-    }
-
-    /* ---------------- PORTFOLIO ---------------- */
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .project {
-      position: relative;
-      height: 280px;
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.18),
+        0 8px 16px rgba(0,0,0,0.12);
       overflow: hidden;
-      border-radius: 16px;
     }
 
-    .project img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
+    /* LEFT */
+    .contact-left {
+      background: linear-gradient(135deg, #000, #222);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px;
     }
 
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      color: #fff;
+    .contact-left img {
+      max-width: 100%;
+      filter: invert(1);
+      opacity: 0.9;
+    }
+
+    /* RIGHT */
+    .contact-right {
+      padding: 72px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 24px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      justify-content: center;
     }
 
-    .project:hover img {
-      transform: scale(1.08);
+    .contact-right h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 6px;
     }
 
-    .project:hover .project-overlay {
-      opacity: 1;
+    .contact-right h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      margin-bottom: 28px;
+      color: #333;
     }
 
-    .project-overlay h3 {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
+    .divider {
+      width: 70px;
+      height: 4px;
+      background: #000;
+      margin-bottom: 28px;
     }
 
-    /* ---------------- CTA ---------------- */
-    .cta {
+    .contact-right p {
+      max-width: 480px;
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      color: #444;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 34px;
+      border-radius: 40px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-email {
       background: #000;
       color: #fff;
-      padding: 140px 8%;
-      text-align: center;
     }
 
-    .cta h2 {
-      font-size: 3rem;
-      margin-bottom: 24px;
-      font-weight: 900;
+    .btn-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
-    .cta a {
-      display: inline-block;
-      margin-top: 32px;
-      padding: 18px 40px;
-      border-radius: 40px;
-      background: #fff;
-      color: #000;
-      font-weight: 900;
-      transition: all 0.3s ease;
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
     }
 
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,211,102,0.45);
     }
 
-    /* ---------------- FOOTER ---------------- */
+    /* -------- FOOTER -------- */
     footer {
-      padding: 60px 8%;
       text-align: center;
+      padding: 40px 8%;
       font-size: 0.9rem;
       color: #666;
     }
 
     @media (max-width: 768px) {
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-left {
+        padding: 48px;
+      }
+
+      .contact-right {
+        padding: 48px 32px;
+      }
+
       nav .menu a {
         margin-left: 16px;
       }
@@ -246,84 +192,49 @@
   <nav>
     <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
     <div class="menu">
-      <a href="servicios.html">Servicios</a>
-      <a href="#portfolio">Portafolio</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#portfolio">Portafolio</a>
       <a href="contacto.html">Contacto</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hacemos <span>ruido</span><br> para que tu marca crezca.</h1>
-      <p>
-        Estrategia digital, redes sociales y desarrollo web
-        para negocios que quieren resultados reales.
-      </p>
-      <div class="hero-buttons">
-        <a href="contacto.html" class="primary">Quiero crecer</a>
-        <a href="servicios.html">Ver planes</a>
-      </div>
-    </div>
-  </section>
+  <!-- CONTACT -->
+  <section class="contact-section">
 
-  <!-- SERVICES -->
-  <section class="section" id="servicios">
-    <h2>¿Qué hacemos?</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Redes Sociales</h3>
-        <p>Contenido, atención a clientes e interacción que genera ventas.</p>
-      </div>
-      <div class="service-card">
-        <h3>Diseño Web</h3>
-        <p>Páginas profesionales pensadas para convertir visitas en clientes.</p>
-      </div>
-      <div class="service-card">
-        <h3>Sistemas a Medida</h3>
-        <p>Herramientas personalizadas para automatizar y ahorrar tiempo.</p>
-      </div>
-    </div>
-  </section>
+    <div class="contact-card">
 
-  <!-- PORTFOLIO -->
-  <section class="section" id="portfolio">
-    <h2>Portafolio</h2>
-
-    <div class="portfolio">
-
-      <a href="https://sunnytown-production.up.railway.app/" target="_blank" class="project">
-        <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764190968/Captura_de_pantalla_2025-11-26_a_la_s_3.01.49_p.m._p2sbrc.png" alt="Sunny Town">
-        <div class="project-overlay">
-          <h3>Sunny Town</h3>
-          <p>E-commerce · Branding · Web</p>
-        </div>
-      </a>
-
-      <div class="project">
-        <img src="https://via.placeholder.com/1200x800/000000/ffffff?text=Redes+Sociales">
-        <div class="project-overlay">
-          <h3>Gestión de Redes</h3>
-          <p>Contenido · Atención · Crecimiento</p>
-        </div>
+      <!-- LEFT -->
+      <div class="contact-left">
+        <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
       </div>
 
-      <div class="project">
-        <img src="https://via.placeholder.com/1200x800/111111/ffffff?text=Sistemas+a+Medida">
-        <div class="project-overlay">
-          <h3>Sistemas a Medida</h3>
-          <p>Automatización · Control</p>
+      <!-- RIGHT -->
+      <div class="contact-right">
+        <h1>Paul Trujillo</h1>
+        <h2>Director de Estrategia Digital</h2>
+
+        <div class="divider"></div>
+
+        <p>
+          Impulso negocios a través de estrategia digital, desarrollo web
+          y sistemas a medida enfocados en crecimiento real.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-email" href="mailto:paul.trujillo@pignoise.com">
+            Email
+          </a>
+
+          <a class="btn btn-whatsapp"
+             href="https://wa.me/521XXXXXXXXXX?text=Hola%20Paul,%20me%20gustaria%20hablar%20sobre%20mis%20redes%20y%20mi%20pagina%20web"
+             target="_blank">
+            WhatsApp
+          </a>
         </div>
       </div>
 
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta" id="contacto">
-    <h2>¿Listo para hacer ruido?</h2>
-    <p>Hablemos y llevemos tu negocio al siguiente nivel.</p>
-    <a href="contacto.html">Contactar</a>
   </section>
 
   <!-- FOOTER -->
