@@ -44,8 +44,9 @@
       height: 90px;
     }
 
-    nav a {
-      font-weight: 700;
+    nav .menu a {
+      margin-left: 32px;
+      font-weight: 600;
       letter-spacing: 0.5px;
     }
 
@@ -55,24 +56,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 80px 8%;
+      padding: 100px 8%;
     }
 
     .contact-card {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      width: 900px;
+      grid-template-columns: 1fr 1.3fr;
+      width: 960px;
       max-width: 100%;
       border: 2px solid #000;
     }
 
-    /* LEFT SIDE */
+    /* LEFT */
     .contact-left {
       background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px;
+      padding: 64px;
     }
 
     .contact-left img {
@@ -80,29 +81,29 @@
       filter: invert(1);
     }
 
-    /* RIGHT SIDE */
+    /* RIGHT */
     .contact-right {
-      padding: 64px;
+      padding: 72px;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
     .contact-right h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 900;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .contact-right h2 {
       font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 32px;
       letter-spacing: 0.5px;
+      margin-bottom: 32px;
     }
 
     .divider {
-      width: 60px;
+      width: 70px;
       height: 5px;
       background: #000;
       margin-bottom: 32px;
@@ -110,13 +111,13 @@
 
     .contact-right p {
       max-width: 480px;
-      margin-bottom: 40px;
       font-size: 1.05rem;
+      margin-bottom: 48px;
     }
 
     .contact-right a {
       display: inline-block;
-      padding: 16px 32px;
+      padding: 18px 36px;
       border: 2px solid #000;
       font-weight: 800;
       transition: all 0.3s ease;
@@ -148,6 +149,10 @@
       .contact-right {
         padding: 48px 32px;
       }
+
+      nav .menu a {
+        margin-left: 16px;
+      }
     }
   </style>
 </head>
@@ -157,7 +162,11 @@
   <!-- NAV -->
   <nav>
     <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
-    <a href="index.html">← Volver</a>
+    <div class="menu">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#portfolio">Portafolio</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
   </nav>
 
   <!-- CONTACT -->
@@ -178,8 +187,8 @@
         <div class="divider"></div>
 
         <p>
-          Ayudo a negocios a crecer mediante estrategia digital, desarrollo web
-          y sistemas a medida que realmente funcionan.
+          Ayudo a negocios a crecer con estrategia digital, desarrollo web
+          y sistemas a medida que realmente generan resultados.
         </p>
 
         <a href="mailto:paul.trujillo@pignoise.com">
