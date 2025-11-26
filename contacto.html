@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Pig Noise</title>
+
+  <style>
+    /* ------------- RESET ------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ------------- CARD ------------- */
+    .contact-card {
+      background: #ffffff;
+      width: 680px;
+      max-width: 92%;
+      display: flex;
+      border: 2px solid #000;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* LEFT */
+    .left {
+      width: 40%;
+      border-right: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .left img {
+      max-width: 100%;
+    }
+
+    /* RIGHT */
+    .right {
+      width: 60%;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .right span {
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .right p {
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .right a {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 2px solid #000;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .right a:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* BACK LINK */
+    .back {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .contact-card {
+        flex-direction: column;
+      }
+
+      .left,
+      .right {
+        width: 100%;
+      }
+
+      .left {
+        border-right: none;
+        border-bottom: 2px solid #000;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="back">← Volver</a>
+
+  <div class="contact-card">
+
+    <!-- LOGO -->
+    <div class="left">
+      <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
+    </div>
+
+    <!-- INFO -->
+    <div class="right">
+      <h1>Paul Trujillo</h1>
+      <span>Director de Estrategia Digital</span>
+
+      <p>
+        Hablemos sobre cómo hacer crecer tu negocio, mejorar tu presencia digital
+        y desarrollar soluciones reales que funcionen para ti.
+      </p>
+
+      <a href="mailto:paul.trujillo@pignoise.com">
+        paul.trujillo@pignoise.com
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
