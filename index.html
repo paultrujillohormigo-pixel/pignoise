@@ -231,6 +231,17 @@
         margin-left: 16px;
       }
     }
+    /* ---------------- SCROLL REVEAL ---------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 
@@ -265,7 +276,8 @@
   <section class="section" id="servicios">
     <h2>¿Qué hacemos?</h2>
     <div class="services">
-      <div class="service-card">
+      <div class="service-card reveal">
+
         <h3>Redes Sociales</h3>
         <p>Gestión, contenido, atención a clientes y crecimiento real.</p>
       </div>
@@ -325,6 +337,25 @@
     <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
     <p>© 2025 Pig Noise · Soluciones Digitales</p>
   </footer>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 120;
+
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
