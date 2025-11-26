@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servicios | Pig Noise</title>
+  <title>Pig Noise | Soluciones Digitales</title>
 
   <style>
-    /* -------- RESET -------- */
+    /* ---------------- RESET ---------------- */
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #f5f5f5;
+      background: #ffffff;
       color: #111;
       line-height: 1.6;
     }
@@ -25,7 +25,22 @@
       color: inherit;
     }
 
-    /* -------- NAVBAR -------- */
+    /* ---------------- SMOOTH SCROLL ---------------- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .section:target,
+    .cta:target {
+      animation: focusSection 1.2s ease;
+    }
+
+    @keyframes focusSection {
+      0% { box-shadow: inset 0 0 0 4px #000; }
+      100% { box-shadow: inset 0 0 0 0 transparent; }
+    }
+
+    /* ---------------- NAVBAR ---------------- */
     nav {
       width: 100%;
       padding: 24px 8%;
@@ -46,106 +61,181 @@
     nav .menu a {
       margin-left: 32px;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
-    /* -------- HERO -------- */
+    /* ---------------- HERO ---------------- */
     .hero {
-      padding: 120px 8% 80px;
-      text-align: center;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+    }
+
+    .hero-content {
+      max-width: 720px;
     }
 
     .hero h1 {
-      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
       font-weight: 900;
       margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      border-bottom: 6px solid #000;
     }
 
     .hero p {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      color: #444;
-    }
-
-    /* -------- PLANS -------- */
-    .plans {
-      padding: 80px 8% 140px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .plan-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 48px 36px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .plan-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-      font-weight: 900;
-    }
-
-    .price {
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 24px;
-    }
-
-    .features {
+      font-size: 1.2rem;
       margin-bottom: 40px;
-      color: #444;
+      max-width: 620px;
+      color: #333;
     }
 
-    .features li {
-      margin-bottom: 12px;
-      list-style: none;
+    .hero-buttons a {
+      padding: 16px 32px;
+      border: 2px solid #000;
+      margin-right: 16px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    .features li::before {
-      content: "• ";
-      font-weight: 900;
-    }
-
-    .plan-card a {
-      align-self: flex-start;
-      padding: 16px 36px;
-      border-radius: 40px;
+    .hero-buttons a.primary {
       background: #000;
       color: #fff;
-      font-weight: 800;
+    }
+
+    .hero-buttons a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ---------------- SECTIONS ---------------- */
+    .section {
+      padding: 120px 8%;
+    }
+
+    .section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 80px;
+      font-weight: 900;
+    }
+
+    /* ---------------- SERVICES ---------------- */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+    }
+
+    .service-card {
+      border-radius: 16px;
+      padding: 40px 32px;
+      background: #f6f6f6;
       transition: all 0.3s ease;
     }
 
-    .plan-card a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
-    }
-
-    /* -------- CUSTOM PLAN -------- */
-    .custom {
-      background: linear-gradient(135deg, #000, #222);
+    .service-card:hover {
+      background: #000;
       color: #fff;
+      transform: translateY(-6px);
     }
 
-    .custom a {
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    /* ---------------- PORTFOLIO ---------------- */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .project {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.08);
+    }
+
+    .project:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-overlay h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    /* ---------------- CTA ---------------- */
+    .cta {
+      background: #000;
+      color: #fff;
+      padding: 140px 8%;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      margin-bottom: 24px;
+      font-weight: 900;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 18px 40px;
+      border-radius: 40px;
       background: #fff;
       color: #000;
+      font-weight: 900;
+      transition: all 0.3s ease;
     }
 
-    /* -------- FOOTER -------- */
+    .cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+    }
+
+    /* ---------------- FOOTER ---------------- */
     footer {
+      padding: 60px 8%;
       text-align: center;
-      padding: 40px 8%;
       font-size: 0.9rem;
       color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav .menu a {
+        margin-left: 16px;
+      }
     }
   </style>
 </head>
@@ -156,74 +246,84 @@
   <nav>
     <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764189452/logo_trans_qdkuse.png" alt="Pig Noise Logo">
     <div class="menu">
-      <a href="index.html#servicios">Servicios</a>
-      <a href="index.html#portfolio">Portafolio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="#portfolio">Portafolio</a>
       <a href="contacto.html">Contacto</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Planes de Impulso Digital</h1>
-    <p>
-      Soluciones claras, escalables y orientadas a resultados.
-      Elige el nivel de acompañamiento que tu negocio necesita.
-    </p>
+    <div class="hero-content">
+      <h1>Hacemos <span>ruido</span><br> para que tu marca crezca.</h1>
+      <p>
+        Estrategia digital, redes sociales y desarrollo web
+        para negocios que quieren resultados reales.
+      </p>
+      <div class="hero-buttons">
+        <a href="contacto.html" class="primary">Quiero crecer</a>
+        <a href="servicios.html">Ver planes</a>
+      </div>
+    </div>
   </section>
 
-  <!-- PLANS -->
-  <section class="plans">
-
-    <!-- STARTER -->
-    <div class="plan-card">
-      <h3>Starter</h3>
-      <div class="price">$1,500 / mes</div>
-      <ul class="features">
-        <li>5 historias semanales</li>
-        <li>3 publicaciones mensuales</li>
-        <li>Contenido visual del negocio</li>
-        <li>Gestión básica de redes</li>
-      </ul>
-      <a href="contacto.html">Contratar</a>
+  <!-- SERVICES -->
+  <section class="section" id="servicios">
+    <h2>¿Qué hacemos?</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Redes Sociales</h3>
+        <p>Contenido, atención a clientes e interacción que genera ventas.</p>
+      </div>
+      <div class="service-card">
+        <h3>Diseño Web</h3>
+        <p>Páginas profesionales pensadas para convertir visitas en clientes.</p>
+      </div>
+      <div class="service-card">
+        <h3>Sistemas a Medida</h3>
+        <p>Herramientas personalizadas para automatizar y ahorrar tiempo.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- ENGAGE -->
-    <div class="plan-card">
-      <h3>Engage</h3>
-      <div class="price">$2,500 / mes</div>
-      <ul class="features">
-        <li>5 historias semanales</li>
-        <li>3 publicaciones mensuales</li>
-        <li>Atención a mensajes y consultas</li>
-        <li>Interacción activa en publicaciones</li>
-      </ul>
-      <a href="contacto.html">Contratar</a>
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <h2>Portafolio</h2>
+
+    <div class="portfolio">
+
+      <a href="https://sunnytown-production.up.railway.app/" target="_blank" class="project">
+        <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764190968/Captura_de_pantalla_2025-11-26_a_la_s_3.01.49_p.m._p2sbrc.png" alt="Sunny Town">
+        <div class="project-overlay">
+          <h3>Sunny Town</h3>
+          <p>E-commerce · Branding · Web</p>
+        </div>
+      </a>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/1200x800/000000/ffffff?text=Redes+Sociales">
+        <div class="project-overlay">
+          <h3>Gestión de Redes</h3>
+          <p>Contenido · Atención · Crecimiento</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://via.placeholder.com/1200x800/111111/ffffff?text=Sistemas+a+Medida">
+        <div class="project-overlay">
+          <h3>Sistemas a Medida</h3>
+          <p>Automatización · Control</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- GROWTH -->
-    <div class="plan-card">
-      <h3>Growth</h3>
-      <div class="price">$3,500 / mes</div>
-      <ul class="features">
-        <li>Contenido y gestión completa</li>
-        <li>Atención a clientes e interacción</li>
-        <li>Página web con sistema personalizado</li>
-        <li>Implementación de publicidad digital</li>
-      </ul>
-      <a href="contacto.html">Contratar</a>
-    </div>
-
-    <!-- CUSTOM -->
-    <div class="plan-card custom">
-      <h3>Custom</h3>
-      <div class="price">¿Tienes otras necesidades?</div>
-      <p class="features">
-        Diseñamos soluciones específicas según tu negocio,
-        industria y objetivos.
-      </p>
-      <a href="contacto.html">Cotizar</a>
-    </div>
-
+  <!-- CTA -->
+  <section class="cta" id="contacto">
+    <h2>¿Listo para hacer ruido?</h2>
+    <p>Hablemos y llevemos tu negocio al siguiente nivel.</p>
+    <a href="contacto.html">Contactar</a>
   </section>
 
   <!-- FOOTER -->
