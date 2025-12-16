@@ -131,10 +131,14 @@
       margin-bottom: 16px;
     }
 
+.project-center {
+  grid-column: 2 / 3;
+}
+    
     /* ---------------- PORTFOLIO ---------------- */
     .portfolio {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);      
       gap: 32px;
     }
 
@@ -341,7 +345,7 @@ html {
           <p>Automatización · Control · Administración</p>
         </div>
       </a>
-     <a href="#" class="project">
+     <a href="#" class="project project-center">
         <img src="https://res.cloudinary.com/dnzkctdej/image/upload/v1764192861/Mercado_Pago_ajpsgc.png" alt="Sistemas adecuados">
         <div class="project-overlay">
           <h3>Sistemas a tu medida, sin limites</h3>
